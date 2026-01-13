@@ -1,3 +1,8 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Security.Cryptography.X509Certificates;
+
 public static class Arrays
 {
     /// <summary>
@@ -8,12 +13,21 @@ public static class Arrays
     /// <returns>array of doubles that are the multiples of the supplied number</returns>
     public static double[] MultiplesOf(double number, int length)
     {
-        // TODO Problem 1 Start
-        // Remember: Using comments in your program, write down your process for solving this problem
-        // step by step before you write the code. The plan should be clear enough that it could
-        // be implemented by another person.
+         // This function returns a list of multiples of the given number.
+        // The amount of multiples returned depends on the 'length' parameter.
+        // 1. Create a list to store the multiples.
+        // 2. Use a for loop to iterate from 1 up to the given length.
+        // 3. Multiply the current index by the given number and add the result to the list.
+        // 4. Convert the list to an array and return it for the corresponding tests.
 
-        return []; // replace this return statement with your own
+        List<double> numbers = new();
+        for (int i = 1; i <= length; i++)
+        {
+            double x = i * number;
+            numbers.Add(x);
+        }
+
+        return numbers.ToArray(); // replace this return statement with your own
     }
 
     /// <summary>
@@ -25,9 +39,20 @@ public static class Arrays
     /// </summary>
     public static void RotateListRight(List<int> data, int amount)
     {
-        // TODO Problem 2 Start
-        // Remember: Using comments in your program, write down your process for solving this problem
-        // step by step before you write the code. The plan should be clear enough that it could
-        // be implemented by another person.
+        // This function rotates the list to the right by moving elements.
+        // 1. Repeat the process 'amount' times.
+        // 2. On each iteration, store the last element of the list.
+        // 3. Remove the last element from the list.
+        // 4. Insert the stored element at the beginning of the list.
+        int x = 0;
+        while (x < amount)
+        {
+            x += 1;
+            int lastElement = data[data.Count - 1];
+            data.RemoveAt(data.Count - 1);
+            data.Insert(0, lastElement);
+        }
+
+        
     }
 }
