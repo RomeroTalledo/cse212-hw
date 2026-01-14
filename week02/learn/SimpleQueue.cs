@@ -14,6 +14,8 @@
 
         Console.WriteLine("------------");
 
+
+
         // Test 2
         // Scenario: Enqueue multiple values and then Dequeue all of them
         // Expected Result: It should display 200, then 300, then 400 in that order
@@ -31,6 +33,8 @@
         // Defect(s) Found: 
 
         Console.WriteLine("------------");
+
+
 
         // Test 3
         // Scenario: Dequeue from an empty Queue
@@ -53,8 +57,11 @@
     /// Enqueue the value provided into the queue
     /// </summary>
     /// <param name="value">Integer value to add to the queue</param>
+    
+    /// ENQUEUE -> ES AGREGAR A LA COLA ES DECIR AL FINAL
     private void Enqueue(int value) {
-        _queue.Insert(0, value);
+        _queue.Add(value);
+        
     }
 
     /// <summary>
@@ -62,12 +69,14 @@
     /// </summary>
     /// <exception cref="IndexOutOfRangeException">If queue is empty</exception>
     /// <returns>First integer in the queue</returns>
+    
+    /// DEQUEUE -> ES QUITAR DEL PRIMER INDICE 
     private int Dequeue() {
         if (_queue.Count <= 0)
             throw new IndexOutOfRangeException();
 
-        var value = _queue[1];
-        _queue.RemoveAt(1);
+        var value = _queue[0];
+        _queue.RemoveAt(0);
         return value;
     }
 }
