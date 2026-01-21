@@ -13,7 +13,9 @@ public class PersonQueue
     /// <param name="person">The person to add</param>
     public void Enqueue(Person person)
     {
-        _queue.Insert(0, person);
+        _queue.Add(person);
+        // Initially, _queue.Insert(0, person) was used, which added elements to the front of the list, breaking the FIFO order.
+        // It was corrected to _queue.Add(person) so that elements are added to the end, maintaining the correct queue order.
     }
 
     public Person Dequeue()

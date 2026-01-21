@@ -11,3 +11,7 @@
         return result;
     }
 }
+
+// La primera es palindroma
+// Las segunda palabras tambien es palindroma
+// La tercera es igual a la 2 pero la 3 no tiene sentido
